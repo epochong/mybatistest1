@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--关联（一对一，多对多）映射推荐使用resultMap-->
+<mapper namespace="com.ming.mapper.OrdersMapper">
+    <select id="queryOrdersToUser" resultType="com.ming.po.OrdersEx">
+        select orders.*,user.username,user.address,user.sex from orders,user where orders.user_id = user.id;
+    </select>
+</mapper>
